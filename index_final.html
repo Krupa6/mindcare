@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindCare - Take Care of Your Mental Health</title>
+    <link rel="stylesheet" href="style (2).css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Login/Register Section -->
+    <div id="auth-container" class="active">
+        <div class="auth-card">
+            <div class="auth-header">
+                <img src="/api/placeholder/80/80" alt="MindCare Logo" class="logo">
+                <h1>MindCare</h1>
+                <p>Your mental wellness companion</p>
+            </div>
+            
+            <div class="auth-tabs">
+                <button class="tab-btn active" data-tab="login">Login</button>
+                <button class="tab-btn" data-tab="register">Register</button>
+            </div>
+            
+            <div id="login-form" class="auth-form active">
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="Email" id="login-email">
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password" id="login-password">
+                </div>
+                <button class="auth-btn" id="login-btn">Login</button>
+                <p class="forgot-password">Forgot Password?</p>
+            </div>
+            
+            <div id="register-form" class="auth-form">
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Full Name" id="register-name">
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="Email" id="register-email">
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password" id="register-password">
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Confirm Password" id="register-confirm">
+                </div>
+                <button class="auth-btn" id="register-btn">Create Account</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main App Container -->
+    <div id="app-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <img src="/api/placeholder/50/50" alt="MindCare Logo" class="logo">
+                <h2>MindCare</h2>
+            </div>
+            
+            <ul class="nav-links">
+                <li class="nav-item active" data-page="home">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </li>
+                <li class="nav-item" data-page="meditation">
+                    <i class="fas fa-spa"></i>
+                    <span>Meditation</span>
+                </li>
+                <li class="nav-item" data-page="music">
+                    <i class="fas fa-music"></i>
+                    <span>Music</span>
+                </li>
+                <li class="nav-item" data-page="journal">
+                    <i class="fas fa-book"></i>
+                    <span>Journal</span>
+                </li>
+                <li class="nav-item" data-page="chatbot">
+                    <i class="fas fa-comment-dots"></i>
+                    <span>Chatbot</span>
+                </li>
+            </ul>
+            
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <img src="/api/placeholder/40/40" alt="User Avatar" class="user-avatar">
+                    <span class="user-name">User Name</span>
+                </div>
+                <button id="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                </button>
+            </div>
+        </nav>
+        
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Home Page -->
+            <section id="home" class="page active">
+                <div class="page-header">
+                    <h1>Welcome to MindCare</h1>
+                    <p class="date-time" id="date-time"></p>
+                </div>
+                
+                <div class="mood-tracker">
+                    <h2>How are you feeling today?</h2>
+                    <div class="mood-options">
+                        <div class="mood-option" data-mood="great">
+                            <div class="mood-emoji">😊</div>
+                            <span>Great</span>
+                        </div>
+                        <div class="mood-option" data-mood="good">
+                            <div class="mood-emoji">🙂</div>
+                            <span>Good</span>
+                        </div>
+                        <div class="mood-option" data-mood="okay">
+                            <div class="mood-emoji">😐</div>
+                            <span>Okay</span>
+                        </div>
+                        <div class="mood-option" data-mood="bad">
+                            <div class="mood-emoji">😔</div>
+                            <span>Bad</span>
+                        </div>
+                        <div class="mood-option" data-mood="terrible">
+                            <div class="mood-emoji">😢</div>
+                            <span>Terrible</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="home-cards">
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>Mood History</h3>
+                            <p>See your emotional patterns</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>Streaks</h3>
+                            <p>7 days of mindfulness</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>Daily Goals</h3>
+                            <p>2/3 completed</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="recommendations">
+                    <h2>Recommended for You</h2>
+                    <div class="recommendation-cards">
+                        <div class="recommendation-card" data-target="meditation">
+                            <img src="/api/placeholder/320/180" alt="Meditation" class="recommendation-img">
+                            <div class="recommendation-info">
+                                <h3>5-Minute Morning Meditation</h3>
+                                <p>Start your day with calm and focus</p>
+                                <button class="action-btn">Start Now</button>
+                            </div>
+                        </div>
+                        
+                        <div class="recommendation-card" data-target="music">
+                            <img src="/api/placeholder/320/180" alt="Music" class="recommendation-img">
+                            <div class="recommendation-info">
+                                <h3>Relaxing Nature Sounds</h3>
+                                <p>Immerse yourself in peaceful melodies</p>
+                                <button class="action-btn">Listen Now</button>
+                            </div>
+                        </div>
+                        
+                        <div class="recommendation-card" data-target="journal">
+                            <img src="/api/placeholder/320/180" alt="Journal" class="recommendation-img">
+                            <div class="recommendation-info">
+                                <h3>Gratitude Journaling</h3>
+                                <p>Record three things you're thankful for</p>
+                                <button class="action-btn">Write Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Meditation Page -->
+            <section id="meditation" class="page">
+                <div class="page-header">
+                    <h1>Meditation Sessions</h1>
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search meditations...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                </div>
+                
+                <div class="category-filter">
+                    <button class="category-btn active" data-category="all">All</button>
+                    <button class="category-btn" data-category="beginner">Beginner</button>
+                    <button class="category-btn" data-category="sleep">Sleep</button>
+                    <button class="category-btn" data-category="anxiety">Anxiety</button>
+                    <button class="category-btn" data-category="focus">Focus</button>
+                    <button class="category-btn" data-category="gratitude">Gratitude</button>
+                </div>
+                
+                <div class="meditation-grid">
+                    <div class="meditation-card" data-categories="beginner,anxiety">
+                        <div class="meditation-img-container">
+                            <img src="C:\Users\Lenovo\Downloads\MINDCARE\Screenshot 2025-01-07 204922.png" alt="Calm Mind Meditation">
+                            <span class="duration">10 min</span>
+                        </div>
+                        <h3>Calm Mind Meditation</h3>
+                        <p>Perfect for beginners to reduce anxiety</p>
+                        <button class="play-btn"><i class="fas fa-play"></i> Start</button>
+                    </div>
+                    
+                    <div class="meditation-card" data-categories="sleep">
+                        <div class="meditation-img-container">
+                            <img src="/api/placeholder/320/180" alt="Deep Sleep Meditation">
+                            <span class="duration">15 min</span>
+                        </div>
+                        <h3>Deep Sleep Meditation</h3>
+                        <p>Prepare your mind and body for restful sleep</p>
+                        <button class="play-btn"><i class="fas fa-play"></i> Start</button>
+                    </div>
+                    
+                    <div class="meditation-card" data-categories="focus">
+                        <div class="meditation-img-container">
+                            <img src="/api/placeholder/320/180" alt="Focus Meditation">
+                            <span class="duration">8 min</span>
+                        </div>
+                        <h3>Focus Meditation</h3>
+                        <p>Improve concentration and productivity</p>
+                        <button class="play-btn"><i class="fas fa-play"></i> Start</button>
+                    </div>
+                    
+                    <div class="meditation-card" data-categories="gratitude">
+                        <div class="meditation-img-container">
+                            <img src="/api/placeholder/320/180" alt="Gratitude Practice">
+                            <span class="duration">12 min</span>
+                        </div>
+                        <h3>Gratitude Practice</h3>
+                        <p>Cultivate appreciation for what you have</p>
+                        <button class="play-btn"><i class="fas fa-play"></i> Start</button>
+                    </div>
+                    
+                    <div class="meditation-card" data-categories="anxiety">
+                        <div class="meditation-img-container">
+                            <img src="/api/placeholder/320/180" alt="Anxiety Relief">
+                            <span class="duration">9 min</span>
+                        </div>
+                        <h3>Anxiety Relief</h3>
+                        <p>Quick session to calm anxiety and stress</p>
+                        <button class="play-btn"><i class="fas fa-play"></i> Start</button>
+                    </div>
+                    
+                    <div class="meditation-card" data-categories="beginner">
+                        <div class="meditation-img-container">
+                            <img src="/api/placeholder/320/180" alt="Breath Awareness">
+                            <span class="duration">5 min</span>
+                        </div>
+                        <h3>Breath Awareness</h3>
+                        <p>Simple breathing exercise for beginners</p>
+                        <button class="play-btn"><i class="fas fa-play"></i> Start</button>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Music Page -->
+            <section id="music" class="page">
+                <div class="page-header">
+                    <h1>Relaxing Music</h1>
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search music...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                </div>
+                
+                <div class="category-filter">
+                    <button class="category-btn active" data-category="all">All</button>
+                    <button class="category-btn" data-category="nature">Nature</button>
+                    <button class="category-btn" data-category="ambient">Ambient</button>
+                    <button class="category-btn" data-category="sleep">Sleep</button>
+                    <button class="category-btn" data-category="focus">Focus</button>
+                    <button class="category-btn" data-category="meditation">Meditation</button>
+                </div>
+                
+                <div class="music-player">
+                    <div class="currently-playing">
+                        <div class="song-info">
+                            <img src="/api/placeholder/60/60" alt="Music Thumbnail" class="song-thumbnail">
+                            <div>
+                                <h3 class="song-title">Select a track to play</h3>
+                                <p class="song-artist">-</p>
+                            </div>
+                        </div>
+                        <div class="player-controls">
+                            <button class="control-btn" id="prev-btn"><i class="fas fa-step-backward"></i></button>
+                            <button class="control-btn" id="play-btn"><i class="fas fa-play"></i></button>
+                            <button class="control-btn" id="next-btn"><i class="fas fa-step-forward"></i></button>
+                        </div>
+                        <div class="progress-container">
+                            <span class="current-time">0:00</span>
+                            <div class="progress-bar">
+                                <div class="progress"></div>
+                            </div>
+                            <span class="duration">0:00</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="playlist">
+                    <h2>Featured Playlists</h2>
+                    <div class="playlist-grid">
+                        <div class="playlist-card" data-category="nature">
+                            <img src="/api/placeholder/200/200" alt="Nature Sounds" class="playlist-img">
+                            <h3>Peaceful Nature Sounds</h3>
+                            <p>15 tracks • 2 hrs 30 min</p>
+                        </div>
+                        
+                        <div class="playlist-card" data-category="ambient">
+                            <img src="/api/placeholder/200/200" alt="Ambient Melodies" class="playlist-img">
+                            <h3>Ambient Melodies</h3>
+                            <p>12 tracks • 1 hr 45 min</p>
+                        </div>
+                        
+                        <div class="playlist-card" data-category="sleep">
+                            <img src="/api/placeholder/200/200" alt="Deep Sleep" class="playlist-img">
+                            <h3>Deep Sleep Soundtrack</h3>
+                            <p>8 tracks • 3 hrs</p>
+                        </div>
+                        
+                        <div class="playlist-card" data-category="focus">
+                            <img src="/api/placeholder/200/200" alt="Focus Beats" class="playlist-img">
+                            <h3>Focus Beats</h3>
+                            <p>20 tracks • 2 hrs 15 min</p>
+                        </div>
+                    </div>
+                    
+                    <h2>Popular Tracks</h2>
+                    <div class="tracks-list">
+                        <div class="track-item" data-category="nature">
+                            <div class="track-info">
+                                <img src="/api/placeholder/40/40" alt="Rain Sounds" class="track-img">
+                                <div>
+                                    <h4>Gentle Rain</h4>
+                                    <p>Nature Sounds</p>
+                                </div>
+                            </div>
+                            <span class="track-duration">10:15</span>
+                            <button class="track-play-btn"><i class="fas fa-play"></i></button>
+                        </div>
+                        
+                        <div class="track-item" data-category="meditation">
+                            <div class="track-info">
+                                <img src="/api/placeholder/40/40" alt="Tibetan Bowls" class="track-img">
+                                <div>
+                                    <h4>Tibetan Singing Bowls</h4>
+                                    <p>Meditation Music</p>
+                                </div>
+                            </div>
+                            <span class="track-duration">8:32</span>
+                            <button class="track-play-btn"><i class="fas fa-play"></i></button>
+                        </div>
+                        
+                        <div class="track-item" data-category="ambient">
+                            <div class="track-info">
+                                <img src="/api/placeholder/40/40" alt="Ocean Waves" class="track-img">
+                                <div>
+                                    <h4>Ocean Waves</h4>
+                                    <p>Ambient Sounds</p>
+                                </div>
+                            </div>
+                            <span class="track-duration">15:20</span>
+                            <button class="track-play-btn"><i class="fas fa-play"></i></button>
+                        </div>
+                        
+                        <div class="track-item" data-category="focus">
+                            <div class="track-info">
+                                <img src="/api/placeholder/40/40" alt="Lo-Fi Study" class="track-img">
+                                <div>
+                                    <h4>Lo-Fi Study Beats</h4>
+                                    <p>Focus Music</p>
+                                </div>
+                            </div>
+                            <span class="track-duration">12:45</span>
+                            <button class="track-play-btn"><i class="fas fa-play"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Journal Page -->
+            <section id="journal" class="page">
+                <div class="page-header">
+                    <h1>Your Journal</h1>
+                    <button class="new-entry-btn"><i class="fas fa-plus"></i> New Entry</button>
+                </div>
+                
+                <div class="journal-container">
+                    <div class="journal-sidebar">
+                        <div class="journal-search">
+                            <input type="text" placeholder="Search entries...">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        
+                        <div class="journal-entries">
+                            <div class="journal-entry active">
+                                <h3>Today's Reflections</h3>
+                                <p class="entry-date">April 13, 2025</p>
+                                <p class="entry-preview">Started my day with a 10-minute meditation session and it really helped me focus...</p>
+                            </div>
+                            
+                            <div class="journal-entry">
+                                <h3>Progress Report</h3>
+                                <p class="entry-date">April 10, 2025</p>
+                                <p class="entry-preview">I've been consistent with my mindfulness practice for a week now and I'm noticing some positive changes...</p>
+                            </div>
+                            
+                            <div class="journal-entry">
+                                <h3>Gratitude List</h3>
+                                <p class="entry-date">April 5, 2025</p>
+                                <p class="entry-preview">1. My supportive family 2. The beautiful weather today 3. Having time to practice self-care...</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="journal-editor">
+                        <div class="editor-header">
+                            <input type="text" class="entry-title" value="Today's Reflections">
+                            <div class="editor-tools">
+                                <button class="tool-btn"><i class="fas fa-bold"></i></button>
+                                <button class="tool-btn"><i class="fas fa-italic"></i></button>
+                                <button class="tool-btn"><i class="fas fa-underline"></i></button>
+                                <button class="tool-btn"><i class="fas fa-list"></i></button>
+                                <button class="tool-btn"><i class="fas fa-list-ol"></i></button>
+                            </div>
+                        </div>
+                        
+                        <textarea class="journal-content">Started my day with a 10-minute meditation session and it really helped me focus throughout the morning. I noticed I was less reactive to stressful emails and more present during meetings.
+
+Things I'm grateful for today:
+- The sunny weather that brightened my mood
+- A productive conversation with my team
+- Making time for self-care
+
+Tomorrow I want to try the new sleep meditation to help with my insomnia.</textarea>
+                        
+                        <div class="editor-footer">
+                            <div class="mood-tag">
+                                <i class="fas fa-smile"></i>
+                                <span>Feeling: Calm</span>
+                            </div>
+                            <button class="save-btn">Save Entry</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Chatbot Page -->
+            <section id="chatbot" class="page">
+                <div class="page-header">
+                    <h1>MindCare Assistant</h1>
+                </div>
+                
+                <div class="chatbot-container">
+                    <div class="chat-messages">
+                        <div class="message bot">
+                            <div class="message-avatar">
+                                <img src="/api/placeholder/40/40" alt="Bot Avatar">
+                            </div>
+                            <div class="message-content">
+                                <p>Hi there! I'm your MindCare Assistant. How can I help you today? You can ask me about stress management, sleep tips, meditation techniques, or just chat about how you're feeling.</p>
+                                <span class="message-time">10:00 AM</span>
+                            </div>
+                        </div>
+                        
+                        <div class="message user">
+                            <div class="message-content">
+                                <p>I've been feeling anxious lately. Any tips to help calm my mind?</p>
+                                <span class="message-time">10:05 AM</span>
+                            </div>
+                        </div>
+                        
+                        <div class="message bot">
+                            <div class="message-avatar">
+                                <img src="/api/placeholder/40/40" alt="Bot Avatar">
+                            </div>
+                            <div class="message-content">
+                                <p>I'm sorry to hear you're feeling anxious. Here are some techniques that might help:</p>
+                                <ul>
+                                    <li>Try deep breathing: Inhale slowly for 4 counts, hold for 2, exhale for 6</li>
+                                    <li>Practice the 5-4-3-2-1 grounding technique: Notice 5 things you can see, 4 things you can touch, 3 things you can hear, 2 things you can smell, and 1 thing you can taste</li>
+                                    <li>Consider our "Anxiety Relief" meditation in the Meditation section</li>
+                                </ul>
+                                <p>Would you like to try any of these now?</p>
+                                <span class="message-time">10:06 AM</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="chat-input">
+                        <div class="suggested-responses">
+                            <button class="suggestion">Tell me more about deep breathing</button>
+                            <button class="suggestion">I'd like to try the meditation</button>
+                            <button class="suggestion">What's the grounding technique?</button>
+                        </div>
+                        
+                        <div class="input-container">
+                            <textarea placeholder="Type your message..."></textarea>
+                            <button class="send-btn"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Media Player Modal -->
+            <div class="media-player-modal" id="media-player-modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 id="media-title">5-Minute Morning Meditation</h2>
+                        <button class="close-modal-btn"><i class="fas fa-times"></i></button>
+                    </div>
+                    
+                    <div class="media-player">
+                        <div class="media-visual">
+                            <img src="/api/placeholder/400/225" alt="Media Visual" id="media-img">
+                            <div class="media-overlay">
+                                <div class="timer-display">05:00</div>
+                            </div>
+                        </div>
+                        
+                        <div class="media-controls">
+                            <button class="media-control-btn" id="media-play"><i class="fas fa-play"></i></button>
+                            <div class="media-progress">
+                                <div class="media-progress-bar">
+                                    <div class="media-progress-fill"></div>
+                                </div>
+                                <div class="media-time">
+                                    <span id="current-time">0:00</span>
+                                    <span id="total-time">5:00</span>
+                                </div>
+                            </div>
+                            <button class="media-control-btn" id="media-volume"><i class="fas fa-volume-up"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="media-description">
+                        <p id="media-desc">Start your day with this calming meditation designed to center your mind and prepare you for a productive day. Focus on your breath and set positive intentions for the hours ahead.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="script_updated.js"></script>
+</body>
+</html>
